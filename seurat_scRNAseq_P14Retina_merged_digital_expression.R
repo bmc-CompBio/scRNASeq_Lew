@@ -15,7 +15,7 @@ nbt<-CreateSeuratObject(raw.data = counts,
 #log transform object to make more normally distributed
 nbt=NormalizeData(nbt)
 
-#find highly Variable genes as they contribute more to cell heterogeneity; necessary for further analysis
+#find highly variable genes as they contribute more to cell heterogeneity; necessary for further analysis
 nbt=FindVariableGenes(nbt,mean.function = ExpMean, 
                       dispersion.function = LogVMR, 
                       do.plot = FALSE)
