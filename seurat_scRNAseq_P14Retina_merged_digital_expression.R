@@ -1,5 +1,6 @@
 library(Seurat)
 
+#download and setup
 download.file("https://syncandshare.lrz.de/dl/fi2nue8KDJ2b25qDe24KED35", 
               destfile = "sparse_GSE63472_P14Retina_merged_digital_expression.mtx")
 
@@ -52,22 +53,24 @@ nbt=FindClusters(nbt, genes.use = var.genes,
 
 
 
-## usefuel functions
-#SetIdent()       #Sets identity of given cells to a value you choose; you can create own clusters or collapse existing clusters
-#RenameIdent()    #rename existing identities
-#FindMarkers()    #find genes differentially expressed between two or more clusters
-#PCElbowPlot()    #plots standard deviation of PCs
+#usefuel functions
+##SetIdent()       #Sets identity of given cells to a value you choose; you can create own clusters or collapse existing clusters
+##RenameIdent()    #rename existing identities
+##FindMarkers()    #find genes differentially expressed between two or more clusters
+##PCElbowPlot()    #plots standard deviation of PCs
 
 
+#find biomarkers for certain clusters
+markers<-FindMarkers(nbt,13,21,                    #use identities according to clusters you want to compare
+                     logfc.threshold=1.5)          #log foldchange cutoff
 
-##plots
+#plot examples
+## "GLUL","AQP4","RLBP1","APOE" are markers for Müller cells, a major retinal cell type
 TSNEPlot(nbt, do.label = T)
 
 FeaturePlot(nbt, features.plot ="GLUL",            #which feature (e.g gene/cells) to plot
             cols.use = c("lightblue", "red"))
 
-markers<-FindMarkers(nbt,13,21,                    #use identities according to clusters you want to compare
-                     logfc.threshold=1.5)          #log foldchange cutoff
 
 FeaturePlot(nbt, features.plot =c("AQP4","GLUL"),
                  overlay = T, 
