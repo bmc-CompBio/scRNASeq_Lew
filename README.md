@@ -22,6 +22,6 @@ Highly Parallel Genome-wide Expression Profiling of Individual Cells Using Nanol
 
 *optional:*
 
-+ Rtsne openmp branch for parallel computation - https://github.com/jkrijthe/Rtsne
++ Rtsne openmp branch for parallel TSNE computation - https://github.com/jkrijthe/Rtsne
 + umap-learn package for python - https://umap-learn.readthedocs.io/en/latest/
 
