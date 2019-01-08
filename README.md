@@ -2,6 +2,10 @@
 
 This project uses the Seurat package to establish a workflow for the analysis of single cell RNA sequencing data. The used dataset is publicly available.
 
++ Tissue: Retina of seven P14 mice
++ Single Cell method: DropSeq
+
+
 
 ## Original data from Macosko et. al. 
 
@@ -15,8 +19,6 @@ Highly Parallel Genome-wide Expression Profiling of Individual Cells Using Nanol
 ## Necessary packages
 
 + Seurat
-
-
 
 *optional:*
 
